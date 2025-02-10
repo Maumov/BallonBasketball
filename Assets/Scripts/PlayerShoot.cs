@@ -75,10 +75,12 @@ public class PlayerShoot : MonoBehaviour
         
     }
 
+    public float up = 2f;
+    public float forward = 100f;
     void ShootBall()
     {
         Rigidbody rb = ballTarget.GetComponent<Rigidbody>();
-        Vector3 endPoint = ( cam.transform.position ) + ( cam.transform.up * 2f ) + ( cam.transform.forward * 100f );
+        Vector3 endPoint = ( cam.transform.position ) + ( cam.transform.up * up ) + ( cam.transform.forward * forward );
         Vector3 startPoint = ballTarget.transform.position;
         Vector3 direction = endPoint - startPoint;  
         direction.Normalize();
